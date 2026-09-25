@@ -1,4 +1,7 @@
-<h<h>div align="center">
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,20,30,40&height=180&section=header&text=Nomaan%20Khan&fontSize=40&fontColor=fff&animation=fadeIn&fontAlignY=38&desc=Architect%20&%20Founder%20@%20NomaanOS%20|%20Cybersecurity%20Researcher&descSize=14&descAlignY=62" width="100%"/>
+</div>
+
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,20,30,40&height=180&section=header&text=Nomaan%20Khan&fontSize=40&fontColor=fff&animation=fadeIn&fontAlignY=38&desc=Architect%20&%20Founder%20@%20NomaanOS%20|%20Cybersecurity%20Researcher&descSize=14&descAlignY=62" width="100%"/>
 </div>
 
