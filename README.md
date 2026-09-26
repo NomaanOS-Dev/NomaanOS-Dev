@@ -44,7 +44,6 @@ flowchart TD
     MESH <--> PEER
 
 📦 Verified Production Repositories
-
 | Repository | Version | Status | Primary Capability |
 |---|---|---|---|
 | NomaanOS-Core | v1.1.0 |  | Master Orchestrator, CLI, TUI Console, & REST Daemon |
