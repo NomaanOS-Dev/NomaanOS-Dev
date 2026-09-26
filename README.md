@@ -19,29 +19,29 @@
 ## 🏛 Ecosystem Architecture Overview
 
 ```mermaid
-graph TD
-    subgraph Host Hardware Layer
+flowchart TD
+    subgraph Host[Host Hardware Layer]
         KERNEL[Linux Kernel sysfs / Thermal Zones]
     end
 
-    subgraph NomaanOS Security Enclave
+    subgraph Enclave[NomaanOS Security Enclave]
         CORE[NomaanOS-Core Orchestrator v1.1.0]
         SOC[NomaanOS-ShieldSOC Telemetry Engine v1.1.0]
         LEDGER[NomaanOS-EvidenceLedger SHA-256 v1.1.0]
         GHOST[NomaanOS-GhostNode HMAC Attestation v1.0.0]
     end
 
-    subgraph Distributed Swarm Mesh
+    subgraph Swarm[Distributed Swarm Mesh]
         MESH[NomaanOS-MeshLink P2P Gossip Daemon v1.0.0]
         PEER[Edge Peer Swarm Sockets]
     end
 
-    KERNEL -->|Raw Thermal Telemetry| SOC
-    SOC -->|Attested Metrics| CORE
-    GHOST -->|Zero-Trust Auth Token| CORE
-    CORE -->|Sequential Audit Stream| LEDGER
-    CORE -->|Cluster Discovery & Topology| MESH
-    MESH <-->|UDP 255.255.255.255:9876| PEER
+    KERNEL --> SOC
+    SOC --> CORE
+    GHOST --> CORE
+    CORE --> LEDGER
+    CORE --> MESH
+    MESH <--> PEER
 
 📦 Verified Production Repositories
 | Repository | Version | Status | Primary Capability |
@@ -52,8 +52,8 @@ graph TD
 | NomaanOS-GhostNode | v1.0.0 |  | Keyed Cryptographic Enclave Attestation Unit |
 | NomaanOS-MeshLink | v1.0.0 |  | Autonomous UDP Swarm Discovery Engine & Dynamic Topology |
 ⚡ Global Verification
-Poore stack ko kisi bhi environment (Linux, Termux, Raspberry Pi, macOS) par bina kisi third-party dependencies ke verify karne ke liye:
-git clone [https://github.com/NomaanOS-Dev/NomaanOS-Core.git](https://github.com/NomaanOS-Dev/NomaanOS-Core.git)
+Poore stack ko kisi bhi POSIX / Linux environment par zero dependencies ke sath verify karein:
+git clone https://github.com/NomaanOS-Dev/NomaanOS-Core.git
 cd NomaanOS-Core
 python3 nomaanos.py --status
 python3 nomaanos.py chain-verify
