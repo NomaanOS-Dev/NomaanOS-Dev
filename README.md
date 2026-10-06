@@ -1,12 +1,12 @@
 <div align="center">
 
 # NomaanOS — Sovereign AI Stack (SAS)
-### Zero-Cloud, Offline, Security-First AI Infrastructure for Edge Sovereignty
+### Zero-cloud, offline-first AI security research stack for edge environments
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/)
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20POSIX-orange.svg?style=for-the-badge&logo=linux)](https://github.com/NomaanOS-Dev)
-[![Security](https://img.shields.io/badge/Security-Keyed%20HMAC--SHA256-red.svg?style=for-the-badge&logo=lock)](https://github.com/NomaanOS-Dev)
-[![Standard Library](https://img.shields.io/badge/Dependencies-Standard%20Library%20Only-brightgreen.svg?style=for-the-badge)](https://github.com/NomaanOS-Dev)
+[![Security](https://img.shields.io/badge/Security-HMAC%20%26%20Audit-red.svg?style=for-the-badge&logo=lock)](https://github.com/NomaanOS-Dev)
+[![Status](https://img.shields.io/badge/Status-Research%20Prototype-orange.svg?style=for-the-badge)](https://github.com/NomaanOS-Dev)
 
 <br/>
 
@@ -18,118 +18,82 @@
 
 </div>
 
-NomaanOS is a sovereign, privacy-preserving edge AI stack designed for environments where cloud connectivity, remote attestation, and centralized control are not acceptable. It combines local execution, cryptographic evidence, hardware telemetry, and air-gapped peer coordination into a unified operating model for resilient intelligence at the edge.
+NomaanOS is a research-oriented sovereign edge AI stack focused on offline execution, local telemetry, tamper-evident audit logging, and air-gapped coordination. It is intended as a security-first experimental architecture for constrained and high-risk environments, not a certified production security platform.
 
-## Why NomaanOS Exists
+## What this project is
 
-Modern AI stacks assume cloud access, shared trust, and centralized orchestration. NomaanOS rejects that model.
+This collection includes components for:
 
-- Zero-cloud by default
-- Offline execution for critical workloads
-- Hardware-aware telemetry and anomaly detection
-- Tamper-evident evidence ledger
-- Federated, peer-to-peer coordination without internet dependency
-- Security-first architecture built around local trust anchors
+- offline AI execution and local orchestration
+- host telemetry and anomaly monitoring
+- cryptographic audit evidence with append-only integrity checks
+- peer-to-peer coordination in disconnected environments
 
-## Ecosystem Architecture Overview
+## Current maturity
+
+NomaanOS is best understood as an active prototype and research project. It includes architecture documentation, working Python modules, tests, and a structured set of repositories, but it is still evolving and should be treated as experimental software unless independently validated for a specific deployment context.
+
+## Repository map
+
+- NomaanOS-Core — orchestration engine, CLI, API server, architecture docs
+- NomaanOS-ShieldSOC — telemetry and host monitoring layer
+- NomaanOS-EvidenceLedger — append-only audit store
+- NomaanOS-GhostNode — air-gapped peer coordination
+- NomaanOS-Production-Dashboard — operational dashboard work
+
+## Architecture overview
 
 ```mermaid
 flowchart TD
-    subgraph Host_Layer["Host Hardware Layer"]
-        LK["Linux Kernel<br/>sysfs / Sensors"]
+    subgraph Host["Host Environment"]
+        HW["Linux / POSIX Host"]
     end
 
-    subgraph Security_Enclave["NomaanOS Security Enclave"]
-        SOC["NomaanOS-ShieldSOC<br/>Telemetry + Threat Detection"]
-        CORE["NomaanOS-Core<br/>Offline AI Execution Kernel"]
-        LEDGER["NomaanOS-EvidenceLedger<br/>Cryptographic Audit Store"]
+    subgraph Core["NomaanOS Security Core"]
+        SOC["ShieldSOC\nTelemetry & Threat Detection"]
+        CORE["Core\nLocal Execution & Policy"]
+        LEDGER["EvidenceLedger\nAudit Integrity"]
     end
 
-    subgraph Mesh_Network["Distributed Edge Network"]
-        GHOST["NomaanOS-GhostNode<br/>Air-Gapped P2P Swarm Engine"]
+    subgraph Mesh["Disconnected Edge Mesh"]
+        GHOST["GhostNode\nAir-Gapped Coordination"]
     end
 
-    LK --> SOC
+    HW --> SOC
     SOC --> CORE
     CORE --> LEDGER
     CORE <--> GHOST
 ```
 
-## Core Components
+## Practical usage
 
-### NomaanOS-Core
-The execution kernel for local and autonomous AI workloads. Designed to run without cloud services and to preserve operational continuity even in disconnected or adversarial environments.
+We recommend using the project as a research and learning framework first. The codebase is structured to support experimentation and local validation, but real-world security deployment requires threat modeling, independent review, and environment-specific testing.
 
-### NomaanOS-ShieldSOC
-A telemetry and anomaly monitoring layer that observes host activity, sensor behavior, and process-level signals to detect deviations from expected security posture.
-
-### NomaanOS-EvidenceLedger
-An append-only ledger for tamper-evident records, event traceability, and verifiable operational history. This is the trust substrate for audit and forensics.
-
-### NomaanOS-GhostNode
-A peer-to-peer swarm daemon for air-gapped distributed coordination. It enables local collaboration without internet exposure or centralized cloud control.
-
-## Verified Production Repositories
-
-- NomaanOS-Core — v1.1.0 — Zero-Cloud Local AI Execution Kernel
-- NomaanOS-EvidenceLedger — v1.1.0 — Cryptographic, Append-Only Tamper-Proof Audit Store
-- NomaanOS-ShieldSOC — v1.1.0 — Real-Time Hardware Telemetry & Threat Anomaly Detection
-- NomaanOS-GhostNode — v1.0.0 — Air-Gapped Distributed Peer-to-Peer Swarm Daemon
-
-## Quick Start
-
-### System Requirements
-
-- Python 3.8+
-- Linux, Android (Termux), or any POSIX-compliant environment
-- Standard library only: hashlib, hmac (SHA-256)
-
-### Global Stack Verification
+## Quick start
 
 ```bash
 git clone https://github.com/NomaanOS-Dev/NomaanOS-Core.git
 cd NomaanOS-Core
-python3 --version
-python3 nomaanos.py --status
-python3 nomaanos.py chain-verify
-```
-
-If alias mapping is unavailable, run:
-
-```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -U pip
+pip install -r requirements-dev.txt
+pytest -q
 python nomaanos.py --status
 python nomaanos.py chain-verify
 ```
 
-## Security Principles
+## Security notes
 
-NomaanOS is built around durable trust assumptions for sovereign edge operations:
+- security controls are intentionally designed to be defense-in-depth
+- cryptographic checks are meaningful only when used with valid threat models and operational procedures
+- treat all components as experimental until independently validated in context
 
-- Local-first execution, no cloud dependency
-- Integrity verification through keyed cryptographic signatures
-- Event provenance and tamper evidence from ledgered records
-- Defensive telemetry for anomaly detection and response
-- Secure interoperability among air-gapped nodes
+## License
 
-## Diagnostics & Troubleshooting
+This project is licensed under the MIT License.
 
-```bash
-python3 nomaanos.py --help
-python3 -m py_compile nomaanos.py
-ls -la
-find . -maxdepth 2 -type f
-```
+## Contact
 
-## Roadmap
-
-NomaanOS is positioned as a research-to-product sovereignty platform for edge AI, with emphasis on:
-
-- hardened offline intelligence
-- hardware-integrated telemetry validation
-- distributed consensus-lite peer trust models
-- robust evidence trails for sensitive deployments
-- secure autonomous execution under disconnected conditions
-
-## License & Intellectual Property
-
-Licensed under the MIT License. Developed and maintained by Nomaan Khan (IHFC — IIT Delhi).
+Nomaan Khan  
+[GitHub](https://github.com/NomaanOS-Dev)
