@@ -1,109 +1,147 @@
+
 <div align="center">
+
 
 # NomaanOS — Sovereign AI Stack (SAS)
 
 ### Enterprise-Hardened, Zero-Dependency Edge Security Kernel & P2P Fabric
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20RaspberryPi%20%7C%20POSIX-orange?style=for-the-badge&logo=linux&logoColor=white)
-![Security](https://img.shields.io/badge/Security-Keyed%20HMAC%20SHA--256-red?style=for-the-badge)
-![Architecture](https://img.shields.io/badge/Zero--Dependency-Stdlib%20Only-brightgreen?style=for-the-badge)
 
-<br>
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/)
 
-**Architect & Principal Investigator:**  
-[Nomaan Khan](https://github.com/NomaanKhan)  
-Scholar @ IHFC — IIT Delhi
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20POSIX-orange.svg?style=for-the-badge&logo=linux)](https://github.com/NomaanOS-Dev)
 
-</div>
+[![Security](https://img.shields.io/badge/Security-Keyed%20HMAC--SHA256-red.svg?style=for-the-badge&logo=lock)](https://github.com/NomaanOS-Dev)
+
+[![Standard Library](https://img.shields.io/badge/Dependencies-Standard%20Library%20Only-brightgreen.svg?style=for-the-badge)](https://github.com/NomaanOS-Dev)
+
+
+<br/>
+
+
+**Architect & Principal Investigator**  
+
+**[Nomaan Khan](https://github.com/NomaanOS-Dev)**  
+
+*Scholar @ IHFC — IIT Delhi*
+
 
 ---
 
-## Ecosystem Architecture Overview
+
+</div>
+
+
+## 🌐 Ecosystem Architecture Overview
+
 
 ```mermaid
-flowchart TD
-    subgraph Host["Host Hardware Layer"]
-        KERNEL["Linux Kernel<br/>sysfs / Thermal Zones"]
+
+graph TD
+
+    subgraph Host_Hardware_Layer ["Host Hardware Layer"]
+
+        LK["Linux Kernel<br/>(sysfs / Thermal Sensors)"]
+
     end
 
-    subgraph Enclave["NomaanOS Security Enclave"]
-        CORE["NomaanOS-Core<br/>Orchestrator v1.1.0"]
-        SOC["NomaanOS-ShieldSOC<br/>Telemetry Engine v1.1.0"]
-        LEDGER["NomaanOS-EvidenceLedger<br/>SHA-256 v1.1.0"]
-        GHOST["NomaanOS-GhostNode<br/>HMAC Attestation v1.0.0"]
+
+    subgraph Security_Enclave ["NomaanOS Security Enclave"]
+
+        SOC["NomaanOS-ShieldSOC<br/>Autonomous Telemetry Daemon"]
+
+        LEDGER["NomaanOS-EvidenceLedger<br/>Cryptographic Audit Store"]
+
+        CORE["NomaanOS-Core<br/>Offline AI Execution Kernel"]
+
     end
 
-    subgraph Swarm["Distributed Swarm Mesh"]
-        MESH["NomaanOS-MeshLink<br/>P2P Gossip Daemon v1.0.0"]
-        PEER["Edge Peer Swarm Sockets"]
+
+    subgraph Swarm_Mesh ["Distributed Edge Network"]
+
+        GHOST["NomaanOS-GhostNode<br/>Air-Gapped P2P Swarm Engine"]
+
     end
 
-    KERNEL --> SOC
-    SOC --> CORE
-    GHOST --> CORE
-    CORE --> LEDGER
-    CORE --> MESH
-    MESH <--> PEER
-```
 
-## Verified Production Repositories
+    LK -->|"Real-Time Telemetry"| SOC
+
+    SOC -->|"System Integrity Feeds"| CORE
+
+    CORE -->|"Immutable Event Logs"| LEDGER
+
+    CORE <-->|"Authenticated Peer Sync"| GHOST
+
+
+🛡️ Verified Production Repositories
 
 | Repository | Version | Status | Primary Capability |
-|---|---:|---|---|
-| [NomaanOS-Core](https://github.com/NomaanOS-Dev/NomaanOS-Core) | v1.1.0 | Production | Master orchestrator, CLI, TUI console, and REST daemon |
-| NomaanOS-ShieldSOC | v1.1.0 | Production | Direct Linux hardware telemetry and observability engine |
-| NomaanOS-EvidenceLedger | v1.1.0 | Production | Disk-persistent cryptographic hash chain |
-| NomaanOS-GhostNode | v1.0.0 | Production | Keyed cryptographic enclave attestation |
-| NomaanOS-MeshLink | v1.0.0 | Production | Autonomous UDP swarm discovery and dynamic topology |
 
-## Global Verification
+|---|---|---|---|
 
-POSIX/Linux environment पर stack verify करने के लिए:
+| NomaanOS-Core | v1.1.0 |  | Zero-Cloud Local AI Execution Kernel |
 
-```bash
-git clone https://github.com/NomaanOS-Dev/NomaanOS-Core.git
+| NomaanOS-EvidenceLedger | v1.1.0 |  | Cryptographic, Append-Only Tamper-Proof Audit Store |
+
+| NomaanOS-ShieldSOC | v1.1.0 |  | Real-Time Hardware Telemetry & Threat Anomaly Detection |
+
+| NomaanOS-GhostNode | v1.0.0 |  | Air-Gapped Distributed Peer-to-Peer Swarm Daemon |
+
+⚡ Global Stack Verification
+
+To independently verify the entire architecture on any standard POSIX/Linux environment:
+
+# Clone and verify core orchestrator
+
+git clone [https://github.com/NomaanOS-Dev/NomaanOS-Core.git](https://github.com/NomaanOS-Dev/NomaanOS-Core.git)
+
 cd NomaanOS-Core
 
+
+# Environment & runtime verification
+
 python3 --version
+
 python3 nomaanos.py --status
+
 python3 nomaanos.py chain-verify
-```
 
-अगर `python3` उपलब्ध नहीं है, तो यह command इस्तेमाल करें:
 
-```bash
+If default alias mapping is unlinked, execute directly via standard binary:
+
 python nomaanos.py --status
+
 python nomaanos.py chain-verify
-```
 
-## Requirements
 
-- Python 3.8 or newer
-- Linux or another POSIX-compatible environment
-- No external Python dependencies required
+📋 System Requirements
 
-## Troubleshooting
+ * Runtime: Python 3.8+ (Zero third-party package dependencies required)
 
-अगर command fail हो, तो पहले available commands देखें:
+ * Operating System: Linux, Android (Termux), or standard POSIX-compliant environment
 
-```bash
+ * Cryptographic Primitives: Standard Python hashlib & hmac (SHA-256)
+
+🔍 Diagnostics & Troubleshooting
+
+Inspect available command line flags:
+
 python3 nomaanos.py --help
-```
 
-Python file का syntax check करें:
 
-```bash
+Verify abstract syntax tree and compilation sanity:
+
 python3 -m py_compile nomaanos.py
-```
 
-और repository की files verify करें:
 
-```bash
+Audit file tree and permission boundaries:
+
 ls -la
+
 find . -maxdepth 2 -type f
-```
 
-## License
 
-See the repository license for usage and distribution terms.
+📄 License & Intellectual Property
+
+Licensed under the MIT License. Developed and maintained by Nomaan Khan (IHFC — IIT Delhi).
+
