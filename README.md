@@ -22,17 +22,17 @@
 
 ```mermaid
 flowchart TD
-    subgraph Host\_Layer["Host Hardware Layer"]
-        LK["Linux Kernel (sysfs / Sensors)"]
+    subgraph Host_Layer["Host Hardware Layer"]
+        LK["Linux Kernel<br/>sysfs / Sensors"]
     end
 
-    subgraph Security\_Enclave["NomaanOS Security Enclave"]
+    subgraph Security_Enclave["NomaanOS Security Enclave"]
         SOC["NomaanOS-ShieldSOC<br/>Autonomous Telemetry Daemon"]
         CORE["NomaanOS-Core<br/>Offline AI Execution Kernel"]
         LEDGER["NomaanOS-EvidenceLedger<br/>Cryptographic Audit Store"]
     end
 
-    subgraph Mesh\_Network["Distributed Edge Network"]
+    subgraph Mesh_Network["Distributed Edge Network"]
         GHOST["NomaanOS-GhostNode<br/>Air-Gapped P2P Swarm Engine"]
     end
 
@@ -40,34 +40,41 @@ flowchart TD
     SOC --> CORE
     CORE --> LEDGER
     CORE <--> GHOST
+```
 
-Verified Production Repositories
-NomaanOS-Core — v1.1.0 — Zero-Cloud Local AI Execution Kernel
-NomaanOS-EvidenceLedger — v1.1.0 — Cryptographic, Append-Only Tamper-Proof Audit Store
-NomaanOS-ShieldSOC — v1.1.0 — Real-Time Hardware Telemetry & Threat Anomaly Detection
-NomaanOS-GhostNode — v1.0.0 — Air-Gapped Distributed Peer-to-Peer Swarm Daemon
+### Verified Production Repositories
+- NomaanOS-Core — v1.1.0 — Zero-Cloud Local AI Execution Kernel
+- NomaanOS-EvidenceLedger — v1.1.0 — Cryptographic, Append-Only Tamper-Proof Audit Store
+- NomaanOS-ShieldSOC — v1.1.0 — Real-Time Hardware Telemetry & Threat Anomaly Detection
+- NomaanOS-GhostNode — v1.0.0 — Air-Gapped Distributed Peer-to-Peer Swarm Daemon
 
-Global Stack Verification
+### Global Stack Verification
+```bash
 git clone https://github.com/NomaanOS-Dev/NomaanOS-Core.git
 cd NomaanOS-Core
 python3 --version
 python3 nomaanos.py --status
 python3 nomaanos.py chain-verify
+```
 
 If alias mapping is unavailable, run:
+```bash
 python nomaanos.py --status
 python nomaanos.py chain-verify
+```
 
-System Requirements
-Python 3.8+
-Linux, Android (Termux), or any POSIX-compliant environment
-Standard library only: hashlib, hmac (SHA-256)
+### System Requirements
+- Python 3.8+
+- Linux, Android (Termux), or any POSIX-compliant environment
+- Standard library only: hashlib, hmac (SHA-256)
 
-Diagnostics & Troubleshooting
+### Diagnostics & Troubleshooting
+```bash
 python3 nomaanos.py --help
-python3 -m py\_compile nomaanos.py
+python3 -m py_compile nomaanos.py
 ls -la
 find . -maxdepth 2 -type f
+```
 
-License & Intellectual Property
+### License & Intellectual Property
 Licensed under the MIT License. Developed and maintained by Nomaan Khan (IHFC — IIT Delhi).
