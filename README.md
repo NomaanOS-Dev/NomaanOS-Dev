@@ -40,40 +40,32 @@ flowchart TD
     SOC --> CORE
     CORE --> LEDGER
     CORE <--> GHOST
-Verified Production Repositories
-RepositoryVersionStatusPrimary Capability
-NomaanOS-Corev1.1.0Zero-Cloud Local AI Execution Kernel
-NomaanOS-EvidenceLedgerv1.1.0Cryptographic, Append-Only Tamper-Proof Audit Store
-NomaanOS-ShieldSOCv1.1.0Real-Time Hardware Telemetry & Threat Anomaly Detection
-NomaanOS-GhostNodev1.0.0Air-Gapped Distributed Peer-to-Peer Swarm Daemon
-Global Stack Verification
-To independently verify the entire architecture on any standard POSIX/Linux environment:
 
-Clone and verify core orchestrator
+Verified Production Repositories
+NomaanOS-Core — v1.1.0 — Zero-Cloud Local AI Execution Kernel
+NomaanOS-EvidenceLedger — v1.1.0 — Cryptographic, Append-Only Tamper-Proof Audit Store
+NomaanOS-ShieldSOC — v1.1.0 — Real-Time Hardware Telemetry & Threat Anomaly Detection
+NomaanOS-GhostNode — v1.0.0 — Air-Gapped Distributed Peer-to-Peer Swarm Daemon
+
+Global Stack Verification
 git clone https://github.com/NomaanOS-Dev/NomaanOS-Core.git
 cd NomaanOS-Core
-
-Environment & runtime verification
 python3 --version
 python3 nomaanos.py --status
 python3 nomaanos.py chain-verify
 
-If default alias mapping is unlinked, execute directly via standard binary:
+If alias mapping is unavailable, run:
 python nomaanos.py --status
 python nomaanos.py chain-verify
 
 System Requirements
-Runtime: Python 3.8+ (Zero third-party package dependencies required)
-Operating System: Linux, Android (Termux), or standard POSIX-compliant environment
-Cryptographic Primitives: Standard Python hashlib & hmac (SHA-256)
+Python 3.8+
+Linux, Android (Termux), or any POSIX-compliant environment
+Standard library only: hashlib, hmac (SHA-256)
+
 Diagnostics & Troubleshooting
-Inspect available command line flags:
 python3 nomaanos.py --help
-
-Verify abstract syntax tree and compilation sanity:
-python3 -m py_compile nomaanos.py
-
-Audit file tree and permission boundaries:
+python3 -m py\_compile nomaanos.py
 ls -la
 find . -maxdepth 2 -type f
 
