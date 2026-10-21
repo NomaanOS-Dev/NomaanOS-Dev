@@ -1,48 +1,31 @@
 # Hi there, I'm Nomaan Khan 👋
-### 🛡️ Scholar @ IHFC — IIT Delhi | AI Security Engineer & Cyber Defense Architect
+### 🛡️ Scholar @ IHFC — IIT Delhi | Sovereign AI & Cyber Defense Architect
 
-I specialize in **Sovereign Edge AI systems**, offline-first security architectures, and **production-grade AI-powered SOC automation platforms**.
-
----
-
-## 🔬 Sovereign AI Stack (SAS) — Edge & Air-Gapped Security Research
-
-**NomaanOS** is an offline-first, zero-cloud AI security research stack engineered for constrained and high-risk edge environments.
-
-* **NomaanOS-Core:** Orchestration engine, CLI, and API architecture.
-* **NomaanOS-ShieldSOC:** Telemetry and host monitoring layer.
-* **NomaanOS-EvidenceLedger:** Append-only cryptographic audit store with integrity checks.
-* **NomaanOS-GhostNode:** Air-gapped peer coordination in disconnected environments.
+I specialize in **Sovereign Edge AI Stacks (SAS)**, autonomous SOC automation, and defensive threat modeling. My work bridges deep learning orchestration with zero-trust infrastructure security.
 
 ---
 
-## 🚀 Live Cloud Applications & SecOps Suite
-
-Interactive, AI-powered security platforms deployed and fully operational:
-
-| Security Platform | Architecture & Domain Scope | Live Deployment |
+### 🚀 Production Security Operations Center (SOC) Suite
+| Platform | Architecture & Scope | Live Application |
 | :--- | :--- | :--- |
-| **`SecOps-Nexus`** | **Master Unified SOC Suite:** Integrates SIEM log parsing, firmware secret scanning, and policy RAG into a single dashboard. | [![Live App](https://img.shields.io/badge/Streamlit-Live_App-FF4B4B?style=for-the-badge&logo=streamlit)](https://secops-nexus.streamlit.app/) |
-| **`Threat-Architect`** | **Defensive Threat Modeling Engine:** System attack surface analysis, MITRE ATT&CK mapping, and NIST/CIS hardening controls. | [![Live App](https://img.shields.io/badge/Streamlit-Live_App-FF4B4B?style=for-the-badge&logo=streamlit)](https://threat-architect.streamlit.app/) |
-| **`Log-Sentinel`** | **AI SIEM Anomaly Analyzer:** SSH brute-force detection, auth log pattern analysis, and automated incident response. | [![Live App](https://img.shields.io/badge/Streamlit-Live_App-FF4B4B?style=for-the-badge&logo=streamlit)](https://nomaanos-log-sentinel.streamlit.app/) |
-| **`Firmware-Guardian`** | **Binary & Secrets Scanner:** Hardcoded credential discovery, Shannon entropy evaluation, and configuration vulnerability auditing. | [![Live App](https://img.shields.io/badge/Streamlit-Live_App-FF4B4B?style=for-the-badge&logo=streamlit)](https://firmware-guardian.streamlit.app/) |
-| **`Smart-Document-Detective`** | **Policy RAG Investigator:** Vector-based compliance inspection and instant threat query resolution for policy docs. | [![Live App](https://img.shields.io/badge/Streamlit-Live_App-FF4B4B?style=for-the-badge&logo=streamlit)](https://smart-document-detective.streamlit.app/) |
+| **SecOps-Nexus** | Unified Threat Intelligence & SOC Master Hub | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://secops-nexus.streamlit.app/) |
+| **Threat-Architect** | AI Defensive Threat Modeling & MITRE ATT&CK Mapping | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://threat-architect.streamlit.app/) |
+| **Log-Sentinel** | AI SIEM Anomaly Threat & Authorization Log Analyzer | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://nomaanos-log-sentinel.streamlit.app/) |
+| **Firmware-Guardian** | Binary Secrets Scanner & Cryptographic Entropy Audit | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://firmware-guardian.streamlit.app/) |
+| **Smart-Document-Detective** | RAG Security Policy Investigator & Audit Assistant | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://nomaanos-dev.streamlit.app/) |
 
 ---
 
-## 🛠️ Core Technical Stack & Standards
-
-* **Languages & Runtime:** `Python 3.x`, `Bash / Shell`, `Alpine Linux (iSH Environment)`
-* **AI & LLM Infrastructure:** `LangChain Core`, `OpenAI GPT-4o-mini`, `RAG Systems`, `Edge AI`
-* **Security & Governance:** `MITRE ATT&CK Framework`, `NIST SP 800-53`, `CIS Benchmarks`, `Shannon Entropy`, `Cryptographic Audit Logging`
-* **Deployment & CI/CD:** `Streamlit Community Cloud`, `Git / GitHub`
-
----
-
-## ⚡ Engineering Agility
-
-All 5 live security applications were developed, version-controlled, and deployed to public cloud directly from an **iPad Pro (iSH / Alpine Linux)** terminal environment.
+### 🧬 Sovereign AI Stack (SAS) Core Modules
+* **[NomaanOS-Core](https://github.com/NomaanOS-Dev/NomaanOS-Core):** Execution Kernel & Autonomous Agent Orchestration.
+* **[NomaanOS-EvidenceLedger](https://github.com/NomaanOS-Dev/NomaanOS-EvidenceLedger):** Cryptographic Hash-Chain Tamper-Evident Ledger.
+* **[NomaanOS-GhostNode](https://github.com/NomaanOS-Dev/NomaanOS-GhostNode):** Air-Gapped Keyed HMAC Identity System.
+* **[NomaanOS-ShieldSOC](https://github.com/NomaanOS-Dev/NomaanOS-ShieldSOC):** Real-Time Telemetry & Host Monitoring Engine.
 
 ---
 
-📫 **Connect & Collaborate:** [GitHub Profile](https://github.com/NomaanOS-Dev) | **Nomaan Khan (IHFC — IIT Delhi)**
+### 💻 Technical Tooling
+`Python 3.10+` | `LangChain` | `OpenAI API` | `Streamlit` | `Docker` | `Git` | `Linux (Alpine/iSH)` | `MITRE ATT&CK` | `NIST SP 800-53`
+
+---
+*Built entirely on mobile edge infrastructure (iPad Pro / iSH Alpine).*
