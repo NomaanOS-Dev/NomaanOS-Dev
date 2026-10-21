@@ -13,6 +13,15 @@ I specialize in **Sovereign Edge AI Stacks (SAS)**, autonomous SOC automation, a
 | **Log-Sentinel** | AI SIEM Anomaly Threat & Authorization Log Analyzer | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://nomaanos-log-sentinel.streamlit.app/) |
 | **Firmware-Guardian** | Binary Secrets Scanner & Cryptographic Entropy Audit | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://firmware-guardian.streamlit.app/) |
 | **Smart-Document-Detective** | RAG Security Policy Investigator & Audit Assistant | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://nomaanos-dev.streamlit.app/) |
+---
+
+### 🔥 Advanced Cyber Defense & AI Security Suite
+| Platform | Architecture & Scope | Live Application |
+| :--- | :--- | :--- |
+| **ZeroTrust-Shield** | AI Microsegmentation & Network Policy Engine | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://zerotrust-shield.streamlit.app/) |
+| **HoneyNode-AI** | Autonomous Deception & Threat Capture Engine | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://honeynode-ai.streamlit.app/) |
+| **Sovereign-Guard** | LLM Security Firewall & Prompt Injection Scanner | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sovereign-guard.streamlit.app/) |
+| **Cloud-Sentinel** | Multi-Cloud IAM & Misconfiguration Auditor | [![Launch App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://cloud-sentinel.streamlit.app/) |
 
 ---
 
